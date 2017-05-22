@@ -1,4 +1,4 @@
-###How to
+# How to
 
 
 ## 1. Install Ubuntu
@@ -14,23 +14,22 @@ http://wiki.ros.org/indigo/Installation/Ubuntu
 
 You can use the next commands: 
 
-`
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+`sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' `
 
-sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+`sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116`
 
-sudo apt-get update
+`sudo apt-get update`
 
-sudo apt-get install ros-indigo-desktop-full
+`sudo apt-get install ros-indigo-desktop-full`
 
-sudo rosdep init
+`sudo rosdep init`
 
-rosdep update
+`rosdep update`
 
-echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
+`echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc`
 
-source ~/.bashrc
-`
+`source ~/.bashrc`
+
 
 ## 3. Install uwsim: 
 
@@ -39,16 +38,16 @@ Following this steps:
 http://www.irs.uji.es/uwsim/wiki/index.php?title=Let%27s_do_it:_Pipe_following
 
 Don't forget to: 
-`
-cd ~/uwsim_ws/src/underwater_simulation/uwsim 
 
-./data/scenes/installScene -s pipeFollowing_basic.uws 
+`cd ~/uwsim_ws/src/underwater_simulation/uwsim`
 
-./data/scenes/installScene -s pipeFollowing_turns.uws 
+`./data/scenes/installScene -s pipeFollowing_basic.uws` 
 
-./data/scenes/installScene -s pipeFollowing_heights.uws 
+`./data/scenes/installScene -s pipeFollowing_turns.uws`
 
-`
+`./data/scenes/installScene -s pipeFollowing_heights.uws`
+
+
 
 If you followed the steps correctly
 
@@ -76,14 +75,15 @@ the simulation parameters can be chaged with:
 
 
 ## 4. Clone this repo:
-cd folder_that_you_want_to_store_this
-git clone https:github
+
+`cd folder_that_you_want_to_store_this`
+`git clone https:github`
 
 ## 5. Now you can set the velocity with the PID-python node
 
-`cd to_file_location
+`cd to_file_location`
 
-python g500_PID_v1.py 
+`python g500_PID_v1.py`
 `
 
 
