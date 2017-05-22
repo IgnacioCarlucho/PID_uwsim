@@ -39,7 +39,8 @@ Don't forget to:
 `./data/scenes/installScene -s pipeFollowing_basic.uws`   
 `./data/scenes/installScene -s pipeFollowing_turns.uws`  
 `./data/scenes/installScene -s pipeFollowing_heights.uws`  
-
+`cd ~/uwsim_ws/ `  
+`catkin_make install `  
 
 
 If you followed the steps correctly
@@ -104,9 +105,26 @@ if you have questions just check this link:
 Now this dynamic simulation will happen inside the tank of the girona lab.  
 You can change the scene by modifiying the file:   
 
-uwsim_ws/src/underwater_simulation/underwater_vehicle_dynamics/launch/UWSim_g500_dynamics.launch  
+uwsim_ws/src/underwater_simulation/underwater_vehicle_dynamics/launch/UWSim_g500_dynamics.launch    
+from: 
+`<arg name="scene" default="circs.xml" />`  
+to  
+`<arg name="scene" default="pipeFollowing_turns.xml" />`  
+or wathever scenery you like  
 
+If you do this, also take in to account that you may need to change the position of the AUV. And this needs to be done on two files: 
 
+uwsim_ws/src/underwater_simulation/underwater_vehicle_dynamics/config/dynamics_g500.yaml
+
+In here position is the line 
+
+`g500/dynamics/initial_pose: [0.0, 0.0, 5.0, 0, 0, 1.57]` 
+
+and put the same position as you put in the last one in: 
+
+src/underwater_simulation/uwsim/data/scenes/pipeFollowing_turns.xml
+
+This way the Auv will start in a give position, without the markers saying that it moved. 
 
 
 
