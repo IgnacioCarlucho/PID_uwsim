@@ -71,10 +71,40 @@ rosrun uwsim setVehicleVelocity /dataNavigator 0.2 0 0 0 0 0`
 `cd folder_that_you_want_to_store_this`  
 `git clone https://github.com/IgnacioCarlucho/PID_uwsim`   
 
-## 5. Now you can set the velocity with the PID-python node
+## 5. Now to do a dynamic simulation:
+
+`roslaunch underwater_vehicle_dynamics UWSim_g500_dynamics.launch`
+
+
+## 6. Disable keyboard control:
+
+This is necessary because if not, the keyboard will be sending Zeros to the thruster controller, and therefore interfering with the  PID controller. So you need to do :   
+
+`gedit uwsim_ws/src/underwater_simulation/underwater_vehicle_dynamics/launch/UWSim_g500_dynamics.launch`  
+
+and comment the line: 
+
+`<node name="keyboard_command" pkg="underwater_vehicle_dynamics" type="keyboard.py" args="$(arg thrusters_topic)" output="screen" respawn="false"/>`  
+
+Comments in xml are done like this: 
+
+`<!--node name="keyboard_command" pkg="underwater_vehicle_dynamics" type="keyboard.py" args="$(arg thrusters_topic)" output="screen" respawn="false"/-->`
+
+if you have questions just check this link: 
+
+- [Creating matlab controler Uwsim](http://www.irs.uji.es/uwsim/wiki/index.php?title=First_steps:_Creating_a_controller_with_Matlab_-_Simulink)
+
+## 7. Now you can set the velocity with the PID-python node
 
 `cd to_file_location`  
 `python g500_PID_v1.py`  
+
+## 8. Change scenery
+
+Now this dynamic simulation will happen inside the tank of the girona lab.  
+You can change the scene by modifiying the file:   
+
+uwsim_ws/src/underwater_simulation/underwater_vehicle_dynamics/launch/UWSim_g500_dynamics.launch  
 
 
 
