@@ -1,5 +1,8 @@
 # How to
 
+Using this python script you can control the velocity of the girona auv in the uwsim simulator.  
+This script will read the speed of the auv, taken from the dvl, and control Vx using a PID controller.  
+This version is not correctly tuned but it works as a demo.  
 
 ## 1. Install Ubuntu
 
@@ -30,7 +33,7 @@ Following this steps:
 
 http://www.irs.uji.es/uwsim/wiki/index.php?title=Let%27s_do_it:_Pipe_following
 
-Don't forget to: 
+Don't forget to:   
 
 `cd ~/uwsim_ws/src/underwater_simulation/uwsim`  
 `./data/scenes/installScene -s pipeFollowing_basic.uws`   
@@ -42,23 +45,23 @@ Don't forget to:
 If you followed the steps correctly
 
 
-- 1st terminal: 
+- 1st terminal:   
  `roscore`
 
-- 2nd terminal: 
+- 2nd terminal:   
  `cd uwsim_ws  
  rosrun uwsim uwsim --configfile uwsim_ws/src/underwater_simulation/uwsim/data/scenes/pipeFollowing_turns.xml`
 
-- 3rd you can see the camera:  
+- 3rd you can see the camera:    
 `cd uwsim_ws  
 rosrun image_view image_view image:=/g500/camera1`  
 
-- 4th I can send commands to the submarine
+- 4th I can send commands to the submarine:  
 
 `cd uwsim_ws  
 rosrun uwsim setVehicleVelocity /dataNavigator 0.2 0 0 0 0 0`  
 
-- The simulation parameters can be chaged with:
+- The simulation parameters can be chaged with:  
 
 /uwsim_ws/src/underwater_simulation/uwsim/data/scenes/pipeFollowing_turns.xml
 
