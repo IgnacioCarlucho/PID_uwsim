@@ -49,12 +49,12 @@ If you followed the steps correctly
  `roscore`
 
 - 2nd terminal:   
- `cd uwsim_ws  
- rosrun uwsim uwsim --configfile uwsim_ws/src/underwater_simulation/uwsim/data/scenes/pipeFollowing_turns.xml`
+ `cd uwsim_ws `  
+ `rosrun uwsim uwsim --configfile uwsim_ws/src/underwater_simulation/uwsim/data/scenes/pipeFollowing_turns.xml`
 
 - 3rd you can see the camera:    
-`cd uwsim_ws  
-rosrun image_view image_view image:=/g500/camera1`  
+`cd uwsim_ws `  
+ `rosrun image_view image_view image:=/g500/camera1`  
 
 - 4th I can send commands to the submarine:  
 
