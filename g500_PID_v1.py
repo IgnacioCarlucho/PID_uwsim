@@ -1,4 +1,4 @@
-# A# Author: Ignacio Carlucho
+# # Author: Ignacio Carlucho
 # Date: 24/04/2017
 # makes the uwsim with the girona submarine, and the scene: pipeFollowing_turns.xml
 # To run:
@@ -35,11 +35,8 @@ vel_v = 0
 
 bridge = CvBridge()
 
-
-
-
-
-
+# this script also has the ability to show the camera image of the ros topic
+# to do so you only have to remove the coments on the last part of the calback
 def callback(msg):
   #http://answers.ros.org/question/210294/ros-python-save-snapshot-from-camera/
   print("Received an image!")
@@ -57,7 +54,7 @@ def callback(msg):
         #ret, cv2_bw_th = cv2.threshold(cv2_bw,1,255,cv2.THRESH_BINARY)
         #cv2.imwrite('camera_image_black_white_treshold.jpeg', cv2_bw_th)
        
-        # print the image in your screen
+        # to print the image in your screen, remove comment
         #cv2.imshow('image',cv2_img)
         #cv2.waitKey(1)
         #cv2.destroyAllWindows()
@@ -96,11 +93,7 @@ def talker():
   # Reference velocity
   v_ref = 0.5 # m/s
   # Initialization values
-  '''
-  k1 = 0.0098
-  k2 = 0.005
-  k3 = 0.001
-  '''
+  
   Kp = 1
   Ti = 1
   Td = 0.001
